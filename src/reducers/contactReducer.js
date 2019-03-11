@@ -1,27 +1,15 @@
 import { GET_CONTACTS, ADD_CONTACT, DELETE_CONTACT } from '../actions/types';
 
 const initialState = {
-  contacts: [
-    {
-      id: 1,
-      name: 'john Doe',
-      email: 'john@gmail.com',
-      phone: '555-555-5555'
-    },
-    {
-      id: 2,
-      name: 'Jeff Smith',
-      email: 'jeff@gmail.com',
-      phone: '666-666-6666'
-    }
-  ]
+  contacts: []
 };
 
 export default function(state = initialState, action) {
   switch (action.type) {
     case GET_CONTACTS:
       return {
-        ...state
+        ...state,
+        contacts: action.payload
       };
     case ADD_CONTACT:
       return {
